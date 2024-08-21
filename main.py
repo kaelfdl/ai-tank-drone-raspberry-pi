@@ -49,7 +49,7 @@ def main():
         elif x == 's':
             direction = 'stop'
             print(direction)
-            GPIO.output(channels, GPIO.LOW)
+            GPIO.output(channels[1:5], GPIO.LOW)
             x = 'z'
 
         # exit
@@ -60,6 +60,9 @@ def main():
         else:
             print('<<< Wrong data >>>')
             print('Please enter the defined data to continue...')
+
+        time.sleep(0.1)
+        GPIO.output(channels[1:5], GPIO.LOW)
 
         # backward
 
