@@ -16,7 +16,6 @@ channels = [ena, in1, in2, in3, in4, enb]
 speed = 25
 freq = 1000
 
-direction = 'forward'
 
 def main():
     GPIO.setmode(GPIO.BOARD)
@@ -27,6 +26,8 @@ def main():
 
     p0.start(speed)
     p1.start(speed)
+
+    direction = 'forward'
 
     print('/n')
     print(f'The default speed and direction is {speed} | {direction} ')
