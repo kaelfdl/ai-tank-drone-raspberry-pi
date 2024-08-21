@@ -16,6 +16,8 @@ channels = [ena, in1, in2, in3, in4, enb]
 speed = 25
 freq = 1000
 
+direction = 'forward'
+
 def main():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(channels, GPIO.OUT)
@@ -27,7 +29,7 @@ def main():
     p1.start(speed)
 
     print('/n')
-    print(f'The default speed and direction is {}')
+    print(f'The default speed and direction is {speed} | {direction} ')
     
     while True:
 
@@ -35,6 +37,7 @@ def main():
 
         # forward
         if x == 'w':
+            print(direction)
             GPIO.output(in1, GPIO.HIGH)
             GPIO.output(in2, GPIO.LOW)
             GPIO.output(in3, GPIO.HIGH)
@@ -43,6 +46,8 @@ def main():
 
         # stop
         elif x == 's':
+            direction = 'stop'
+            print(direction)
             GPIO.output(channels, GPIO.LOW)
             x = 'z'
 
