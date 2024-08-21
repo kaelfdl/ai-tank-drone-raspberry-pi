@@ -11,16 +11,57 @@ in4 = 29
 enb = 16
 
 
-input = [in1, in2, in3, in4]
+channels = [ena, in1, in2, in3, in4, enb]
+
+speed = 25
+freq = 1000
 
 def main():
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(ena, GPIO.OUT)
-    GPIO.setup(enb, GPIO.OUT)
+    GPIO.setup(channels, GPIO.OUT)
+    GPIO.output(channels[1:5], GPIO.LOW)
+    p0 = GPIO.PWM(ena, freq)
+    p1 = GPIO.PWM(enb, freq)
 
-    for i in input:
-        GPIO.setup(i, GPIO.OUT)
-        GPIO.output(i, GPIO.LOW)
+    p0.start(speed)
+    p1.start(speed)
+
+    print('/n')
+    print(f'The default speed and direction is {}')
+    
+    while True:
+
+        x = input("Prompt: ")
+
+        # forward
+        if x == 'w':
+            GPIO.output(in1, GPIO.HIGH)
+            GPIO.output(in2, GPIO.LOW)
+            GPIO.output(in3, GPIO.HIGH)
+            GPIO.output(in4, GPIO.LOW)
+            x = 'z'
+
+        # stop
+        elif x == 's':
+            GPIO.output(channels, GPIO.LOW)
+            x = 'z'
+
+        # exit
+        elif x == 'e':
+            GPIO.cleanup()
+            break
+
+        else:
+            print('<<< Wrong data >>>')
+            print('Please enter the defined data to continue...')
+
+        # backward
+
+        # left
+
+        # right
+
+
 
 if __name__ == "__main__":
     main()
