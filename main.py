@@ -14,7 +14,7 @@ enb = 16
 channels = [ena, in1, in2, in3, in4, enb]
 
 speed = 25
-freq = 1000
+freq = 100
 
 
 def main():
@@ -43,13 +43,16 @@ def main():
             GPIO.output(in2, GPIO.LOW)
             GPIO.output(in3, GPIO.HIGH)
             GPIO.output(in4, GPIO.LOW)
+            p0.ChangeDutyCycle(speed)
+            p1.ChangeDutyCycle(speed)
             x = 'z'
 
         # stop
         elif x == 's':
             direction = 'stop'
             print(direction)
-            GPIO.output(channels[1:5], GPIO.LOW)
+            p0.ChangeDutyCycle(0)
+            p1.ChangeDutyCycle(0)
             x = 'z'
 
         # exit
@@ -62,7 +65,6 @@ def main():
             print('Please enter the defined data to continue...')
 
         time.sleep(1)
-        GPIO.output(channels[1:5], GPIO.LOW)
 
         # backward
 
