@@ -15,7 +15,7 @@ def main():
     channels = [ena, in1, in2, in3, in4, enb]
 
     speed = 0
-    freq = 100
+    freq = 50
 
 
     GPIO.setmode(GPIO.BOARD)
