@@ -15,12 +15,12 @@ def main():
     channels = [ena, in1, in2, in3, in4, enb]
 
     speed = 0
-    freq = 50
+    freq = 100
 
 
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(channels, GPIO.OUT)
-    GPIO.output(channels[1:5], GPIO.LOW)
+    # GPIO.output(channels[1:5], GPIO.LOW)
     p0 = GPIO.PWM(ena, freq)
     p1 = GPIO.PWM(enb, freq)
 
@@ -38,7 +38,7 @@ def main():
 
         # forward
         if x == 'w':
-            speed = 50
+            speed = 100
             print(direction)
             GPIO.output(in1, GPIO.LOW)
             GPIO.output(in2, GPIO.HIGH)
