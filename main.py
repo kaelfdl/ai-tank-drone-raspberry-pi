@@ -9,7 +9,7 @@ def main():
     in3 = 37
     in4 = 35
 
-    enb = 16
+    enb = 12
 
 
     channels = [ena, in1, in2, in3, in4, enb]
@@ -21,7 +21,6 @@ def main():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(channels, GPIO.OUT)
     GPIO.output(channels[1:5], GPIO.LOW)
-    print(channels[1:5])
     p0 = GPIO.PWM(ena, freq)
     p1 = GPIO.PWM(enb, freq)
 
