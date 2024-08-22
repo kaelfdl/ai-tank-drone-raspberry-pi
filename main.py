@@ -20,7 +20,8 @@ freq = 100
 def main():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(channels, GPIO.OUT)
-    GPIO.output(channels[1:4], GPIO.LOW)
+    GPIO.output(channels[1:5], GPIO.LOW)
+    print(channels[1:5])
     p0 = GPIO.PWM(ena, freq)
     p1 = GPIO.PWM(enb, freq)
 
