@@ -39,8 +39,8 @@ def main():
         # forward
         if x == 'w':
             print(direction)
-            GPIO.output(in1, GPIO.HIGH)
-            GPIO.output(in2, GPIO.LOW)
+            GPIO.output(in1, GPIO.LOW)
+            GPIO.output(in2, GPIO.HIGH)
             GPIO.output(in3, GPIO.HIGH)
             GPIO.output(in4, GPIO.LOW)
             p0.ChangeDutyCycle(speed)
