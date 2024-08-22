@@ -13,7 +13,7 @@ enb = 16
 
 channels = [ena, in1, in2, in3, in4, enb]
 
-speed = 50
+speed = 0
 freq = 100
 
 
@@ -39,21 +39,23 @@ def main():
 
         # forward
         if x == 'w':
+            speed = 50
             print(direction)
             GPIO.output(in1, GPIO.LOW)
             GPIO.output(in2, GPIO.HIGH)
-            GPIO.output(in3, GPIO.HIGH)
-            GPIO.output(in4, GPIO.LOW)
+            GPIO.output(in3, GPIO.LOW)
+            GPIO.output(in4, GPIO.HIGH)
             p0.ChangeDutyCycle(speed)
             p1.ChangeDutyCycle(speed)
             x = 'z'
 
         # stop
         elif x == 's':
+            speed = 0
             direction = 'stop'
             print(direction)
-            p0.ChangeDutyCycle(0)
-            p1.ChangeDutyCycle(0)
+            p0.ChangeDutyCycle(speed)
+            p1.ChangeDutyCycle(speed)
             x = 'z'
 
         # exit
