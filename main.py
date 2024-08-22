@@ -61,7 +61,7 @@ def main():
             print('<<< Wrong data >>>')
             print('Please enter the defined data to continue...')
 
-        time.sleep(0.1)
+        time.sleep(1)
         GPIO.output(channels[1:5], GPIO.LOW)
 
         # backward
