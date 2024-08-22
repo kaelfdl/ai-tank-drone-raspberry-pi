@@ -1,23 +1,23 @@
 import RPi.GPIO as GPIO
 import time
 
-ena = 18
-
-in1 = 15
-in2 = 13
-in3 = 31
-in4 = 29
-
-enb = 16
-
-
-channels = [ena, in1, in2, in3, in4, enb]
-
-speed = 0
-freq = 100
-
-
 def main():
+    ena = 18
+
+    in1 = 15
+    in2 = 13
+    in3 = 31
+    in4 = 29
+
+    enb = 16
+
+
+    channels = [ena, in1, in2, in3, in4, enb]
+
+    speed = 0
+    freq = 100
+
+
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(channels, GPIO.OUT)
     GPIO.output(channels[1:5], GPIO.LOW)
