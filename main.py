@@ -13,8 +13,8 @@ enb = 16
 
 channels = [ena, in1, in2, in3, in4, enb]
 
-speed = 25
-freq = 100
+speed = 50
+freq = 1000
 
 
 def main():
