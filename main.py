@@ -6,8 +6,8 @@ def main():
 
     in1 = 15
     in2 = 13
-    in3 = 31
-    in4 = 29
+    in3 = 37
+    in4 = 35
 
     enb = 16
 
