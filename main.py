@@ -2,14 +2,14 @@ import RPi.GPIO as GPIO
 import time
 
 def main():
-    ena = 18
+    ena = 11
 
     in1 = 15
-    in2 = 13
-    in3 = 37
-    in4 = 35
+    in2 = 16
+    in3 = 18
+    in4 = 22
 
-    enb = 12
+    enb = 13
 
 
     channels = [ena, in1, in2, in3, in4, enb]
@@ -38,7 +38,7 @@ def main():
 
         # forward
         if x == 'w':
-            speed = 100
+            speed = 25
             print(direction)
             GPIO.output(in1, GPIO.LOW)
             GPIO.output(in2, GPIO.HIGH)
