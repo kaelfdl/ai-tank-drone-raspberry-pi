@@ -38,7 +38,7 @@ def main():
 
         # forward
         if x == 'w':
-            speed = 25
+            speed = 50
             print(direction)
             GPIO.output(in1, GPIO.LOW)
             GPIO.output(in2, GPIO.HIGH)
