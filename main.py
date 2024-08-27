@@ -37,14 +37,18 @@ def main():
                 break
             print(keypress.keys)
 
+            # w forward 
             if keypress.keys[0]:
                 motor.move()
+            # a left
             elif keypress.keys[1]:
                 motor.move(turn=-turn)
+            # s reverse
             elif keypress.keys[2]:
-                motor.move(turn=turn)
+                motor.move(speed=-speed)
+            # d right
             elif keypress.keys[3]:
-                motor.move()
+                motor.move(turn=turn)
             else:
                 motor.stop()
 
