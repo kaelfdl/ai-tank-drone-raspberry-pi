@@ -20,7 +20,7 @@ def main():
     speed = 0.25
     freq = 100
     turn = 1
-    level = 1
+    level = 0
 
     direction = 'forward'
 
