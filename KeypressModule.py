@@ -25,9 +25,9 @@ class Keypress():
 
         if char == ord('w'):
             self.keys[0] = 1
-        elif char == ord('s'):
-            self.keys[1] = 1
         elif char == ord('a'):
+            self.keys[1] = 1
+        elif char == ord('s'):
             self.keys[2] = 1
         elif char == ord('d'):
             self.keys[3] = 1
