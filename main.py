@@ -40,9 +40,9 @@ def main():
             if keypress.keys[0]:
                 motor.move(t=1)
             elif keypress.keys[1]:
-                motor.move(turn=-turn, t=1)
-            elif keypress.keys[2]:
                 motor.move(turn=turn, t=1)
+            elif keypress.keys[2]:
+                motor.move(turn=-turn, t=1)
             elif keypress.keys[3]:
                 motor.move(t=1)
             else:
