@@ -20,7 +20,7 @@ class Motor():
         self.pwm0.start(0)
         self.pwm1.start(0)
         
-    def move(self, speed=0.5, turn=0, t=0):
+    def move(self, speed=0.5, turn=0.0, t=0):
         '''
         Control the motors with the given parameters
         '''
