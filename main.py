@@ -17,7 +17,7 @@ def main():
 
     channels = [ena, in1, in2, in3, in4, enb]
 
-    speed = 0
+    speed = 0.5
     freq = 100
     turn = 1
 
@@ -42,13 +42,13 @@ def main():
                 motor.move()
             # a left
             elif keypress.keys[1]:
-                motor.move(turn=-turn)
+                motor.move(turn=turn)
             # s reverse
             elif keypress.keys[2]:
                 motor.move(speed=-speed)
             # d right
             elif keypress.keys[3]:
-                motor.move(turn=turn)
+                motor.move(turn=-turn)
             else:
                 motor.stop()
 
